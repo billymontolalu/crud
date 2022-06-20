@@ -1,4 +1,7 @@
 <?php
+echo $_POST["judul_buku"];
+echo $_POST["pengarang"];
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -11,9 +14,11 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-$sql = "INSERT INTO buku (judul_buku, pengarang)
-    VALUES ('" . $_POST["judul_buku"] . "', '" . $_POST["pengarang"] . "')";
+echo "Connected successfully";
+$first_name = "Fian";
+$last_name = "briliandi";
+$name = "Nama : " . $first_name." ".$last_name;
+$sql = "UPDATE buku SET judul_buku = '" . $_POST["judul_buku"] . "', pengarang = '" . $_POST["pengarang"] . "' WHERE id = " . $_POST["id"];
 
 if ($conn->query($sql) === TRUE) {
     header("Location: http://localhost/crud");

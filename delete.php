@@ -16,7 +16,7 @@ echo "Connected successfully";
 $sql = "delete from buku where id = '" . $_GET["id"] . "'";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Record deleted successfully";
+    header("Location: http://localhost/crud");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

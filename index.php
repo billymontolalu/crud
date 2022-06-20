@@ -22,7 +22,8 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-    <a href="http://localhost/crud/tambah.php">Tambah Data</a>
+    <a href="http://localhost/crud/tambah.php">Tambah Data</a> || 
+    <a href="http://localhost/crud/peminjaman.php">Tambah Peminjaman</a>
     <table border="1">
         <tr>
             <td>No</td>
@@ -39,7 +40,7 @@ $result = $conn->query($sql);
                     <td><?php echo $i; ?></td>
                     <td><?php echo $row["judul_buku"]; ?></td>
                     <td><?php echo $row["pengarang"]; ?></td>
-                    <td><a href="">Edit</a> <a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a></td>
+                    <td><a href="edit.php?id=<?php echo $row["id"]; ?>">Edit</a> <a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a></td>
                 </tr>
         <?php
                 $i = $i + 1;
